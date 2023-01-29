@@ -1,0 +1,21 @@
+body{
+  font-style: Montserrat;
+  background-color:#EAEAEA;
+}
+.display{
+  text-align: center;
+}
+ul{
+  list-style-type:none;
+}
+h2{
+  margin-top: 20px;
+}
+.check-img{
+
+  margin-left: 20px;
+}
+.check{
+  text-align: center;
+  background-color: #FFEFD6;
+}

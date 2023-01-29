@@ -1,0 +1,32 @@
+Learn on the theory questions,
+1. Pumping lemma for regular and CFL with example
+2. Ardens theorem
+3. My hill nerode
+4. Ambiguous grammar or not
+5. CNF vs GNF
+6. LMD, RMD
+7. Simplify a Grammar
+8. Closure property
+9. Define FA, PDA, LBA, TM
+10. Mealy vs Moore
+11. Chomsky hierarchy
+12. Cooks theorem
+13. Post correspondence
+14. RE vs REL
+15. Complexity classes
+16. Nfa - dfa conversion comparison
+17.minimize dfa
+18.epsilon closure
+19. Epsilon nfa
+20. Define grammar
+21. PDA and NDPDA diff.
+22.CFL to CFG
+23. CFG to GNF
+24. CFG to CNF
+25. PDA to CFG and vice versa
+26. Church Turing thesis
+Variations of TM
+27. UTM
+28. Decidability
+29. Rice's theorem
+30. TM, PDA, LBA , FA design

@@ -1,0 +1,23 @@
+body{
+  font-style: Montserrat;
+  background-color:#DEF5E5;
+}
+.no-of-std{
+  text-align: center;
+  margin-top: 30px;
+}
+.yes{
+  text-align: center;
+}
+.hello-img{
+  display: block;
+  margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    width: 15%;
+}
+.name-enter{
+  margin-top: 50px;
+  text-align: center;
+}

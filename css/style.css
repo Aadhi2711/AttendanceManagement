@@ -1,0 +1,147 @@
+body{
+  font-style: Montserrat;
+  background-color:#EAEAEA;
+}
+.name{
+  margin-left: 475px;
+}
+  .image{
+  margin-left: 1000px;
+
+  width: 30%;
+}
+.mark{
+  text-align: center;
+}
+
+
+.hello-img{
+  display: block;
+  margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    width: 15%;
+}
+.button{
+  margin-left: 25px;
+  padding:10px;
+}
+.date{
+  margin-top: 150px;
+}
+.button1{
+  margin-bottom: 300px;
+  margin-left: 350px;
+}
+.name-img{
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 4%;
+}
+.std-img{
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width:3%;
+}
+.roll-img{
+  margin-left: 10px;
+  margin-right: 5px;
+  width: 4%;
+}
+.login-img{
+  display: block;
+  margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 55px;
+    width: 11%;
+
+}
+.delebtn{
+  margin-left: 10px;
+}
+.ro-img{
+  margin-top: 20px;
+  width: 5%:
+}
+.attend-img{
+  margin-top: 40px;
+  width: 8%;
+}
+.check1{
+  margin-top: auto;
+ text-align: center;
+}
+.mark1{
+  margin-top: auto;
+ text-align: center;
+
+}
+
+.tab{
+  text-align: center;
+  margin-top: 50px;
+  margin-left: 20px;
+
+}
+.yes{
+  text-align: center;
+}
+#select1{
+  border-color: green
+}
+a:hover{
+  color: #59C1BD;
+}
+hr{
+  margin: 25px auto 25px;
+  border: dotted #404258 5px;
+  border-bottom: none;
+  width: 5%;
+}
+th{
+  text-align: center;
+  padding: auto;
+}
+#table{
+  padding: auto;
+}
+.form-control{
+  margin-bottom: 10px;
+  text-align: center;
+  margin-left: 40%;
+  width: 25%;
+}
+
+table, td,tr {
+  text-align:center;
+  border: 1px solid black;
+  width: 30%;
+}
+.no-of-student{
+  text-align: center;
+  margin: 250px auto 250px;
+
+}
+h4{
+  font-family: 'Bree Serif', serif;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+
+}
+.name-enter{
+  margin-top: 50px;
+  text-align: center;
+}
+.input{
+  width: 12%;
+}
+form {
+       border: 3px solid #f1f1f1;
+   }
+   button{
+
+     padding: 3px;
+   }

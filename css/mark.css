@@ -1,0 +1,28 @@
+body{
+  font-style: Montserrat;
+  background-color:#EAEAEA;
+}
+.mark{
+  text-align: center;
+}
+table, td,tr {
+  text-align:center;
+  border: 1px solid black;
+  width: 30%;
+}
+.date2{
+  margin-left: 30px;
+  margin-top: 20px;
+}
+.no-of-std{
+  margin-left: 30px;
+  margin-top: 20px;
+}
+.save-btn{
+  float: left;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+h1{
+  text-align: center;
+}

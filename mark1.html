@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/mark.css">
+
+
+<style media="screen">
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  margin-left:-5px;
+  margin-right:-5px;
+}
+
+.column1 {
+  float: left;
+  width: 10%;
+  padding: 5px;
+  margin-top: 50px;
+}
+
+.column {
+  float: left;
+  width: 90%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: center;
+  padding: 16px;
+}
+
+</style>
+
+  </head>
+  <body>
+
+    <div class="navigation">
+    <nav class="navbar navbar-expand-lg  bg-light">
+       <img src="https://cdn-icons-png.flaticon.com/128/2230/2230951.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top icon">
+          <a class="navbar-brand" href="">ATTENDANCE</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" ></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+              <a class="nav-link" href="index.html">HOME</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="">MARK</a>
+          </li>
+      </ul>
+      </div>
+    </nav>
+  </div>
+  <br>
+  <div class="mark">
+
+    <img src="https://cdn-icons-png.flaticon.com/128/6612/6612108.png" alt="">
+    <br>
+    <br>
+
+    <h3>MARK THE ATTENDANCE</h3>
+    <br>
+    <br>
+
+
+  </div>
+  <div class="date2">
+    <div class="col-sm-3">
+      <label class="visually-hidden" for="specificSizeInputName"></label>
+      <div class="input-group">
+        <div class="input-group-text">DATE</div>
+        <input type="date" class="form-control" id="date1" placeholder="">
+        <button type="button" name="button" class="btn btn-outline-danger btn-sm" id="markey">CONFIRM</button><br>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="no-of-std">
+
+    <div class="col-sm-3">
+      <label class="visually-hidden" for="specificSizeInputName"></label>
+      <div class="input-group">
+        <div class="input-group-text">STUDENTS</div>
+        <input type="number" class="form-control" id="nostudent" placeholder="">
+        <button type="button" class="btn btn-light" onclick="check()">OK</button>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+
+    <div class="column">
+
+    <table class=" table table-success table-striped table-hover" border="1px">
+      <th>ROLLNO</th>
+      <th>NAME</th>
+      <th>STD</th>
+      <th>SEC</th>
+
+
+
+      <tbody id="table-body">
+
+      </tbody>
+      <br>
+      <br>
+    </table>
+
+  </div>
+
+  <div class="column1">
+
+
+    <table class="  table table-success table-striped " id="table1" >
+<tr>
+  <th>MARK </th>
+</tr>
+
+      <tr id="container">
+<input class="visually-hidden" type="checkbox" name=""  id="check">
+      </tr>
+    </table>
+      </div>
+
+</div>
+
+
+    <br>
+    <br>
+    <a href="nate.html"><button type="button" class="btn btn-secondary">BACK</button></a><br>
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+
+<button type="button" name="button" class="save-btn btn btn-secondary" id="save" onclick="getalue()">SAVE</button>
+
+<script src="mark.js" charset="utf-8"></script>
+
+
+
+    <script id="MainScript">
+    const firebaseConfig = {
+        apiKey: "AIzaSyCwrM47e30yrSY5LHhv1rT5CQvtHjpm_Bs",
+        authDomain: "attendance-539ec.firebaseapp.com",
+        databaseURL: "https://attendance-539ec-default-rtdb.firebaseio.com",
+        projectId: "attendance-539ec",
+        storageBucket: "attendance-539ec.appspot.com",
+        messagingSenderId: "729862916907",
+        appId: "1:729862916907:web:23a8cf5a3f9bb77c10536e",
+        measurementId: "G-XT53CXG42N"
+      };
+
+      // Initialize Firebase
+
+firebase.initializeApp(firebaseConfig);
+
+
+    function selectalldata(){
+      firebase.database().ref('Students').once('value',
+    function(AllRecords){
+      AllRecords.forEach(
+        function(CurrentRecord){
+          var rollno = CurrentRecord.val().rollnumber;
+          var name = CurrentRecord.val().nameofstd;
+          var stand = CurrentRecord.val().Standard;
+          var sec = CurrentRecord.val().Section;
+          AddItemsToTable(name, rollno, stand, sec);
+        }
+      );
+    });
+    }
+
+    window.onload = selectalldata;
+
+
+    var stdno = 0;
+    function AddItemsToTable(name, rollno, stand, sec){
+      var tbody = document.getElementById('table-body');
+      var trow = document.createElement('tr');
+      var td1 = document.createElement('td');
+      var td2 = document.createElement('td');
+      var td3 = document.createElement('td');
+      var td4 = document.createElement('td');
+      td1.innerHTML = rollno;
+      td2.innerHTML = name;
+      td3.innerHTML = stand;
+      td4.innerHTML = sec;
+      trow.appendChild(td1);
+       trow.appendChild(td2);
+       trow.appendChild(td3);
+       trow.appendChild(td4);
+       tbody.appendChild(trow);
+
+}
+    </script>
+
+    <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+    apiKey: "AIzaSyCwrM47e30yrSY5LHhv1rT5CQvtHjpm_Bs",
+    authDomain: "attendance-539ec.firebaseapp.com",
+    databaseURL: "https://attendance-539ec-default-rtdb.firebaseio.com",
+    projectId: "attendance-539ec",
+    storageBucket: "attendance-539ec.appspot.com",
+    messagingSenderId: "729862916907",
+    appId: "1:729862916907:web:23a8cf5a3f9bb77c10536e",
+    measurementId: "G-XT53CXG42N"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    import {getDatabase, ref, get, set, child, update, remove}
+    from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
+
+    const db = getDatabase();
+
+    var checkbox = document.getElementById("check");
+    var date = document.getElementById("date1");
+    var std = document.getElementById("nostudent");
+    var mark = document.getElementById("markey");
+
+    var insertrow = document.getElementById("save");
+
+
+    var stdno = 0;
+    function insertdata(){
+    set(ref(db , "Date/"+date.value),{
+      date: date.value,
+    })
+    .then(()=>{
+    alert("data stored");
+    })
+    .catch((error)=>{
+    alert("error"+error)
+    });
+    }
+
+    mark.addEventListener('click', insertdata);
+
+    insertrow.addEventListener('click', insertdata);
+
+    </script>
+
+  </body>
+</html>

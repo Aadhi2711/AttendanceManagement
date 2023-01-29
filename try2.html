@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CHECK</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/mark.css">
+  </head>
+  <body>
+    <div class="navigation">
+    <nav class="navbar navbar-expand-lg  bg-light">
+       <img src="https://cdn-icons-png.flaticon.com/128/2230/2230951.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top icon">
+          <a class="navbar-brand" href="">ATTENDANCE</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" ></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+              <a class="nav-link" href="index.html">HOME</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="">MARK</a>
+          </li>
+      </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="hi">
+    <h1>STATUS</h1>
+  </div>
+
+  <div class="row">
+
+    <div class="column">
+
+    <table class=" table table-success table-striped table-hover" border="1px">
+      <th>DATE</th>
+      <th>ROLLNO</th>
+      <th>STATUS</th>
+
+      <tbody id="table-body">
+
+      </tbody>
+      <br>
+      <br>
+
+    </table>
+  </div>
+</div>
+
+<a href="try.html"><button type="button" class="btn btn-secondary">BACK</button></a><br>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+
+<script id="MainScript">
+const firebaseConfig = {
+    apiKey: "AIzaSyCwrM47e30yrSY5LHhv1rT5CQvtHjpm_Bs",
+    authDomain: "attendance-539ec.firebaseapp.com",
+    databaseURL: "https://attendance-539ec-default-rtdb.firebaseio.com",
+    projectId: "attendance-539ec",
+    storageBucket: "attendance-539ec.appspot.com",
+    messagingSenderId: "729862916907",
+    appId: "1:729862916907:web:23a8cf5a3f9bb77c10536e",
+    measurementId: "G-XT53CXG42N"
+  };
+
+  // Initialize Firebase
+
+firebase.initializeApp(firebaseConfig);
+
+
+function selectalldata(){
+  firebase.database().ref('Attendance').once('value',
+function(AllRecords){
+  AllRecords.forEach(
+    function(CurrentRecord){
+      var rollno = CurrentRecord.val().rollnumber;
+      var date = CurrentRecord.val().Date;
+      var status = CurrentRecord.val().Status;
+      AddItemsToTable( rollno, date, status);
+    }
+  );
+});
+}
+
+window.onload = selectalldata;
+
+
+var stdno = 0;
+function AddItemsToTable(rollno, date, status){
+  var tbody = document.getElementById('table-body');
+  var trow = document.createElement('tr');
+  var td1 = document.createElement('td');
+  var td2 = document.createElement('td');
+  var td3 = document.createElement('td');
+
+  td1.innerHTML = date;
+  td2.innerHTML = rollno;
+  td3.innerHTML = status;
+
+  trow.appendChild(td1);
+   trow.appendChild(td2);
+   trow.appendChild(td3);
+   tbody.appendChild(trow);
+
+}
+</script>
+
+  </body>
+</html>
